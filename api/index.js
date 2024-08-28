@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRoutes from './routes/user.route.js'
 
 dotenv.config();
 
@@ -27,3 +28,7 @@ app.listen(port, () => {
 .on('error', (err) => {
   console.error('Error starting server:', err);
 });
+
+
+// Api
+app.use('/api/user',userRoutes);
